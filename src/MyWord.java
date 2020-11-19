@@ -25,9 +25,9 @@ public class MyWord implements Comparable<Object>{
         String word1 = this.word.toLowerCase();
         String word2 = ((MyWord)o).word.toLowerCase();
         // The length of the longest word
-        int biggestLength = Math.max(word1.length(), word2.length());
+        int shortestLength = Math.min(word1.length(), word2.length());
         // Going through every character
-        for(int i = 0; i < biggestLength; i++){
+        for(int i = 0; i < shortestLength; i++){
             // Reverse alphabetical order
             if(word1.charAt(i) > word2.charAt(i)){
                 return -1;
@@ -36,7 +36,15 @@ public class MyWord implements Comparable<Object>{
                 return 1;
             }
         }
-        return 0;
+        if(word1.length() > word2.length()){
+            return -1;
+        }
+        else if(word1.length() < word2.length()){
+            return 1;
+        }
+        else {
+            return 0;
+        }
 
     }
 
