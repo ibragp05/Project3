@@ -1,3 +1,10 @@
+/**
+ * A class used to describe words and compare them
+ * in a reverse alphabetical order
+ *
+ * @author Polina Ibragimova
+ * @version 25.11.2020
+ */
 public class MyWord implements Comparable<Object>{
     String word;
 
@@ -36,6 +43,7 @@ public class MyWord implements Comparable<Object>{
                 return 1;
             }
         }
+        // If one word equals the beginning of the other word
         if(word1.length() > word2.length()){
             return -1;
         }
